@@ -5,16 +5,16 @@ import dash_html_components as html
 import os
 
 ###### Set up variables
-list_of_choices=['punch', 'body-slam', 'round-house kick to the face']
-githublink = 'https://github.com/austinlasseter/chuck_norris_execution'
-image1='chucknorris.jpg'
-heading1='Chuck Norris execution method'
+list_of_choices=['happy', 'sad', 'excited', 'indifferent', 'bored', 'angry']
+githublink = 'https://github.com/purnimavenkatram/chuck_norris_execution'
+image1='mood.jpg'
+heading1='My mood today !'
 
 ########### Initiate the app
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 app = dash.Dash(__name__, external_stylesheets=external_stylesheets)
 server = app.server
-app.title='Chuck'
+app.title='I''m feeling'
 
 ####### Layout of the app ########
 app.layout = html.Div([
@@ -36,7 +36,7 @@ app.layout = html.Div([
 @app.callback(dash.dependencies.Output('your-output-here', 'children'),
               [dash.dependencies.Input('your-input-here', 'value')])
 def display_value(whatever_you_chose):
-    return f'Chuck Norris will now execute you with a {whatever_you_chose}.'
+    return f'I''m feeling {whatever_you_chose} like a '
 
 
 ######### Run the app #########
