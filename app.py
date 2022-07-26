@@ -22,13 +22,13 @@ app.title='I''m feeling'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(id='img-container', src=app.get_asset_url(image1), style={'width': '1000', 'height': '500'}),
+    html.Img(id='img-container', src=app.get_asset_url(image1), style={'width': '250', 'height': '250'}),
     dcc.Dropdown(id='input-container',
                 options=[{'label': i, 'value': i} for i in list_of_choices],
                 value='happy',
                 style={'width': '500px'}),
     html.Br(),
-    html.Div(id='output-container', children=''),
+    html.Div(id='output-container', children='happy'),
     html.Br(),
     html.A('Code on Github', href=githublink),
 
