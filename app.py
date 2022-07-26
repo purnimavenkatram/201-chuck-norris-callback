@@ -7,10 +7,10 @@ import dash_html_components as html
 import os
 
 ###### Set up variables
-list_of_choices=['happy', 'sad', 'excited', 'indifferent', 'bored', 'angry','other']
-images=['happy.jpeg','sad.png','excited.jpeg','indifferent.png','bored.jpeg','angry.png','other.jpeg']
+list_of_choices=['happy', 'sad', 'excited', 'unamused', 'sleepy', 'angry']
+images=['happy.png','sad.png','excited.png','unamused.png','bored.png','angry.png']
 githublink = 'https://github.com/purnimavenkatram/201-chuck-norris-callback'
-image1='mood.jpg'
+image1='happy.png'
 heading1='My mood today !'
 
 ########### Initiate the app
@@ -37,9 +37,9 @@ app.layout = html.Div([
 
 ######### Interactive callbacks go here #########
 @app.callback(
-              dash.dependencies.Output('output-container', 'children'),
-              dash.dependencies.Output('img-container','src'),
-              dash.dependencies.Input('input-container', 'value')
+              [dash.dependencies.Output('output-container', 'children'),
+              dash.dependencies.Output('img-container','src')],
+              [dash.dependencies.Input('input-container', 'value')]
              )              
 def display_value(whatever_you_chose):
     return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[list_of_choices.index(whatever_you_chose)])
