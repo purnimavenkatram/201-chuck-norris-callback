@@ -1,7 +1,9 @@
 ######### Import your libraries #######
 import dash
-from dash import dcc
-from dash import html
+#from dash import dcc
+#from dash import html
+import dash_core_components as dcc
+import dash_html_components as html
 import os
 
 ###### Set up variables
@@ -38,9 +40,7 @@ app.layout = html.Div([
               dash.dependencies.Output('output-container', 'children'),
               dash.dependencies.Output('img-container','src'),
               dash.dependencies.Input('input-container', 'value')
-             )
-              
-
+             )              
 def display_value(whatever_you_chose):
     return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[{whatever_you_chose}])
 
