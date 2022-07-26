@@ -20,13 +20,13 @@ app.title='I''m feeling'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(src=app.get_asset_url(image1), style={'width': '500', 'height': '500'}),
-    dcc.Dropdown(id='your-input-here',
+    html.Img(id='img-container', src=app.get_asset_url(image1), style={'width': '250', 'height': '250'}),
+    dcc.Dropdown(id='input-container',
                 options=[{'label': i, 'value': i} for i in list_of_choices],
                 value='happy',
                 style={'width': '500px'}),
     html.Br(),
-    html.Div(id='your-output-here', children=''),
+    html.Div(id='output-container', children=''),
     html.Br(),
     html.A('Code on Github', href=githublink),
 
@@ -34,10 +34,15 @@ app.layout = html.Div([
 
 
 ######### Interactive callbacks go here #########
-@app.callback(dash.dependencies.Output('your-output-here', 'children'),
-              [dash.dependencies.Input('your-input-here', 'value')])
+@app.callback(
+              dash.dependencies.Output('output-container', 'children'),
+              dash.dependencies.Output('img-container','value'),
+              dash.dependencies.Input('input-container', 'value')
+             )
+              
+
 def display_value(whatever_you_chose):
-    return f'I''m feeling {whatever_you_chose}'
+    return f'I''m feeling {whatever_you_chose}', image1[{whatever_you_chose}]
 
 
 ######### Run the app #########
