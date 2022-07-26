@@ -39,10 +39,10 @@ app.layout = html.Div([
 @app.callback(
               [dash.dependencies.Output('output-container', 'children'),
               dash.dependencies.Output('img-container','src')],
-              [dash.dependencies.Input('input-container', 'value')]
+              [dash.dependencies.Input('input-container', 'value')],
              )              
 def display_value(whatever_you_chose):
-    return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[list_of_choices.index(whatever_you_chose)])
+    return f"I'm feeling {whatever_you_chose}", app.get_asset_url(images[list_of_choices.index(whatever_you_chose)])
 
 
 ######### Run the app #########
