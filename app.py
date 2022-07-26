@@ -9,7 +9,7 @@ import os
 ###### Set up variables
 list_of_choices=['happy', 'sad', 'excited', 'indifferent', 'bored', 'angry','other']
 images=['happy.jpeg','sad.png','excited.jpeg','indifferent.png','bored.jpeg','angry.png','other.jpeg']
-githublink = 'https://github.com/purnimavenkatram/chuck_norris_execution'
+githublink = 'https://github.com/purnimavenkatram/201-chuck-norris-callback'
 image1='mood.jpg'
 heading1='My mood today !'
 
