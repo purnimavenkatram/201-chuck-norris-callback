@@ -8,7 +8,7 @@ import os
 
 ###### Set up variables
 list_of_choices=['happy', 'sad', 'excited', 'indifferent', 'bored', 'angry','other']
-images=['happy.jpg','sad.png','excited.png','indifferent.png','bored.png','angry.png','other.png']
+images=['happy.jpeg','sad.png','excited.jpeg','indifferent.png','bored.jpeg','angry.png','other.jpeg']
 githublink = 'https://github.com/purnimavenkatram/chuck_norris_execution'
 image1='mood.jpg'
 heading1='My mood today !'
@@ -42,7 +42,7 @@ app.layout = html.Div([
               dash.dependencies.Input('input-container', 'value')
              )              
 def display_value(whatever_you_chose):
-    return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[{whatever_you_chose}])
+    return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[whatever_you_chose])
 
 
 ######### Run the app #########
