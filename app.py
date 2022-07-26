@@ -42,7 +42,7 @@ app.layout = html.Div([
               dash.dependencies.Input('input-container', 'value')
              )              
 def display_value(whatever_you_chose):
-    return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[whatever_you_chose])
+    return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[list_of_choices.index(whatever_you_chose)])
 
 
 ######### Run the app #########
