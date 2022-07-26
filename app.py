@@ -20,7 +20,7 @@ app.title='I''m feeling'
 ####### Layout of the app ########
 app.layout = html.Div([
     html.H2(heading1),
-    html.Img(id='img-container', src=app.get_asset_url(image1), style={'width': '250', 'height': '250'}),
+    html.Img(id='img-container', src=app.get_asset_url(image1), style={'width': '1000', 'height': '500'}),
     dcc.Dropdown(id='input-container',
                 options=[{'label': i, 'value': i} for i in list_of_choices],
                 value='happy',
@@ -36,13 +36,13 @@ app.layout = html.Div([
 ######### Interactive callbacks go here #########
 @app.callback(
               dash.dependencies.Output('output-container', 'children'),
-              dash.dependencies.Output('img-container','value'),
+              dash.dependencies.Output('img-container','src'),
               dash.dependencies.Input('input-container', 'value')
              )
               
 
 def display_value(whatever_you_chose):
-    return f'I''m feeling {whatever_you_chose}', image1[{whatever_you_chose}]
+    return f'I''m feeling {whatever_you_chose}', app.get_asset_url(images[{whatever_you_chose}])
 
 
 ######### Run the app #########
